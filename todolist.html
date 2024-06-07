@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo lists </title>
+
+    <style>
+        .input_container{
+            padding: 1.2rem;
+            display: flex;
+            gap: 0.4rem;
+        }
+        button{
+            border: none;
+            background-color: aqua;
+            padding: 4px 8px;
+            font-weight: bold;
+        }
+
+        .food_containers{
+            margin-top: 2rem;
+            background-color: rgb(240, 238, 230);
+            padding: 1.2rem;
+            border: 1px solid black;
+        }
+         
+        li{
+            display: block;
+            background-color: rgb(123, 219, 248);
+            margin-bottom: 1rem;
+            padding: 8px;
+            font-size: larger;
+        }
+
+        .alert-box{
+           display: flex;
+           gap: 0.5rem;
+           margin-bottom:1rem ;
+           padding: .5rem;
+           width:50% ;
+           background-color: rgb(43, 143, 224);
+           color: white;
+         
+        }
+
+        .alert-box button{
+            padding: 0;
+            border: none;
+            background-color: transparent;
+            font-size: 20px;
+            cursor: pointer;
+            padding-left:0.3rem ;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="input_container">
+
+
+
+        <input type="text" placeholder="ENTER here" id="inputform">
+        <button id="additem">Sumbit </button>
+    </div>
+
+    <hr>
+    <ul id="food_container" class="food_containers">
+     <li class="item">1-item</li>
+     <li class="item">2-item</li>
+     <li class="item">3-item</li>
+     <li class="item">4-item</li>
+    </ul>
+
+
+    <script>
+
+        // gettting elements
+        
+        let input_contaner =  document.getElementById("input_container")
+        
+        let input_form = document.getElementById('inputform')
+  
+        let  btn_click =  document.getElementById("additem")
+        
+        let food_container = document.getElementById("food_container")
+
+        // addeventlistner
+
+     btn_click.addEventListener('click',()=>{
+       let el = document.createElement("li")
+       el.className = "item"
+       el.textContent = input_form.value;
+       food_container.prepend(el)
+
+      
+
+
+
+//        <div div class="alert-box" >
+//                  Succesfully  added { item - anem } <button>x</button>
+// </div >
+
+
+// we have to create alert message
+
+ let alertbox = document.createElement('div')
+ let clrbtn = document.createElement("button")
+ clrbtn.textContent = "x"
+   alertbox.className = "alert-box"
+
+let alertmes = document.createTextNode(`Succesfully! Created the ${input_form.value}-item`)
+
+alertbox.append(alertmes)
+alertbox.append(clrbtn)
+
+
+
+// predent the alert message to input container
+
+input_contaner.prepend(alertbox)
+
+
+// eventualy clear the form
+input_form.value =""
+     })
+
+    //  let getvalues = document.getElementsByClassName("item")
+
+    // //  console.log(getvalues.te);
+    // let merging = [].map.call(getvalues, (val)=>{
+    //     return val.textContent
+    // })
+
+    // console.log(merging);
+
+    
+
+   
+     
+   </script>
+
+   <script src="/basic.js"></script>
+</body>
+</html>
