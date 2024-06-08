@@ -23,6 +23,7 @@
             background-color: rgb(240, 238, 230);
             padding: 1.2rem;
             border: 1px solid black;
+            width: 50%;
         }
          
         li{
@@ -31,6 +32,21 @@
             margin-bottom: 1rem;
             padding: 8px;
             font-size: larger;
+        }
+
+        .item{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .item span{
+            color:black;
+            font-size:large;
+            font-size: 20px;
+            align-items: center;
+        }
+        span:hover{
+            cursor: pointer;
         }
 
         .alert-box{
@@ -66,10 +82,10 @@
 
     <hr>
     <ul id="food_container" class="food_containers">
-     <li class="item">maggie</li>
-     <li class="item">chicken</li>
-     <li class="item">rice</li>
-     <li class="item">porota</li>
+     <li class="item"><div>maggie</div><span onclick="removeitem(event)">x</span></li>
+     <li class="item"><div>noodles</div><span onclick="removeitem(event)">x</span></li>
+     <li class="item"><div>porotta</div><span onclick="removeitem(event)">x</span></li>
+     <li class="item"><div>chicken rice</div><span onclick="removeitem(event)">x</span></li>
     </ul>
  
 
@@ -95,12 +111,34 @@
         // addeventlistner
 
      btn_click.addEventListener('click',()=>{
-       let el = document.createElement("li")
-       el.className = "item"
-       el.textContent = input_form.value;
-       food_container.prepend(el)
 
+//    <li class = "item">
+//      <div>inputitem</div>
+//      <span onclick = "removeitem(event)">x</span>
+// </li>
+
+       let el = document.createElement("li")
+
+       el.className = "item"
       
+       let divitem = document.createElement("div")
+       divitem.textContent = input_form.value
+       let remoitemspan = document.createElement("span")
+       remoitemspan.innerText = "x"
+
+    //    adding onclick functon to span tag
+       remoitemspan.setAttribute("onclick","removeitem(event)")
+       el.append(divitem,remoitemspan)
+       
+       divitem.textContent = input_form.value
+       
+    // appending li to food container
+
+    food_container.append(el)
+   
+      
+
+     
 
 
 
@@ -114,7 +152,10 @@
  let alertbox = document.createElement('div')
  let clrbtn = document.createElement("button")
  clrbtn.textContent = "x"
+
+//  adding remove functionality to alert notification
    alertbox.className = "alert-box"
+   clrbtn.setAttribute("onclick","removeitem(event)")
 
 let alertmes = document.createTextNode(`Succesfully! Created the ${input_form.value}-item`)
 
@@ -132,16 +173,22 @@ input_contaner.prepend(alertbox)
 input_form.value =""
      })
 
-    //  let getvalues = document.getElementsByClassName("item")
-
-    // //  console.log(getvalues.te);
-    // let merging = [].map.call(getvalues, (val)=>{
-    //     return val.textContent
-    // })
-
-    // console.log(merging);
+   
 
     
+    
+
+
+
+//    remove items  funcition
+
+ function removeitem(event){
+ 
+    let removeitem = event.target.parentNode;
+    // console.log(removeitem);
+    removeitem.remove()  
+    // removeitem.parentNode.removeChild(removeitem)
+ }
 
    
      
@@ -150,6 +197,8 @@ input_form.value =""
    <!-- <script src="/basic.js"></script>
      -->
 
+
+     <script src="looping_overlist.js"></script>
      <script src="cloneparent.js"></script>
 </body>
 </html>

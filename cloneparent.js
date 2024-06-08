@@ -2,15 +2,17 @@
 
 // let food_container = document.getElementById("food_container")
 
+// resync btn
 
-let resync_btn = document.getElementById("resync")
-let resync_container = document.getElementById("duplicate")
+let resyncbtn = document.getElementById("resync");
 
-resync_btn.addEventListener("click",()=>{
-    
-    // CLEAR THE PREVIES ITEMS
-    resync_container.innerHTML=""
-    let duplicateclone = food_container.cloneNode(true)
-    resync_container.append(duplicateclone)
-    // console.log(duplicateclone);
+let duplicatecon = document.getElementById("duplicate")
+
+resyncbtn.addEventListener("click",()=>{
+
+    duplicatecon.innerHTML =""
+
+    let getclone = food_container.cloneNode(true)
+    duplicatecon.append(getclone);
 })
+
