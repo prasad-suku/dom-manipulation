@@ -47,7 +47,11 @@ let obj2 ={
     address:{city:'erode',place:'bhavani',pincode:5987594},
 }
 
-let{name:{firstname},age,address:{city,place}} = obj2;
-console.log(name);
-console.log(age);
-console.log(address);
+// let{name:{firstname},age,address:{city,place}} = obj2;
+// console.log(firstname);
+// console.log(age);
+// console.log(city+": "+place);
+
+
+// accessing destructuring value in varible name
+
