@@ -11,7 +11,7 @@
             display: flex;
             gap: 0.4rem;
         }
-        button{
+        #resync{
             border: none;
             background-color: aqua;
             padding: 4px 8px;
@@ -89,12 +89,26 @@
     </ul>
  
 
-    <!-- resync button -->
-     <button id="resync"> Resync</button>
 
+    <!-- adding functionality hide and show input container when we click show button -->
+
+    <button id="showBtn" style="margin-bottom: 2rem;
+     padding: 9px 13px;border-radius:6px;color:white;
+    background: cornflowerblue;border:none">HIDE DIV</button>
+
+    <div class="input-section-container" style="background-color: rgb(74, 145, 145); padding: 20px 30px;">
+        <input type="text" placeholder="enter the value">
+        <button>submit</button>
+    </div>
+  
+    <!-- dummy button for learing inline css in js -->
+     <!-- <button id="dommy">Practice</button>
+    resync button -->
+     <!-- <button id="resync"> Resync</button> -->
+<!-- 
      <div id="duplicate">
 
-     </div>
+     </div> -->
 
     <script>
 
@@ -198,8 +212,10 @@ input_form.value =""
 
 
      <!-- <script src="looping_overlist.js"></script> -->
-     <script src="cloneparent.js"></script>
+     <!-- <script src="cloneparent.js"></script> -->
+     <script src="showfunctionality.js"></script>
+     <script src="inlinestyle.js"></script>
      <!-- <script src="traversing.js"></script> -->
-    <script src="./destructuring2.js"></script>
+    <!-- <script src="./destructuring2.js"></script> -->
 </body>
 </html>
