@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo lists </title>
-
+<link rel="stylesheet" href="showandhide.css">
     <style>
         .input_container{
             padding: 1.2rem;
@@ -26,13 +26,16 @@
             width: 50%;
         }
          
-        li{
-            display: block;
-            background-color: rgb(123, 219, 248);
-            margin-bottom: 1rem;
-            padding: 8px;
-            font-size: larger;
-        }
+        
+li{
+    width: 100%;
+     background-color: rgb(123, 219, 248);
+     margin-bottom: 1rem;
+     padding: 8px;
+     font-size: larger;
+
+     transition: all 0.7s;
+ }
 
         .item{
             display: flex;
@@ -74,8 +77,7 @@
     
     <div id="input_container">
 
-
-
+   
         <input type="text" placeholder="ENTER here" id="inputform">
         <button id="additem">Sumbit </button>
     </div>
@@ -96,7 +98,7 @@
      padding: 9px 13px;border-radius:6px;color:white;
     background: cornflowerblue;border:none">HIDE DIV</button>
 
-    <div class="input-section-container" style="background-color: rgb(74, 145, 145); padding: 20px 30px;">
+    <div class="input-section-container">
         <input type="text" placeholder="enter the value">
         <button>submit</button>
     </div>
@@ -201,6 +203,7 @@ input_form.value =""
     // console.log(removeitem);
     removeitem.remove()  
     // removeitem.parentNode.removeChild(removeitem)
+    
  }
 
    
@@ -214,7 +217,7 @@ input_form.value =""
      <!-- <script src="looping_overlist.js"></script> -->
      <!-- <script src="cloneparent.js"></script> -->
      <script src="showfunctionality.js"></script>
-     <script src="inlinestyle.js"></script>
+     <!-- <script src="inlinestyle.js"></script> -->
      <!-- <script src="traversing.js"></script> -->
     <!-- <script src="./destructuring2.js"></script> -->
 </body>

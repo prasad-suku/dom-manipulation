@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addevent listerner and remove listener</title>
+</head>
+<body>
+
+    
+   <div style="background-color: green;">
+    <h3>helo its me</h3>
+
+    <h4>this is h4 tag</h4>
+</div>
+    <!-- <h1 onclick='location.href="www.google.com"'>click over me</h1> -->
+
+
+    <script>
+        let h3 = document.querySelector("h3");
+
+
+         let h4 = document.querySelector("h4")
+        // h3.onclick=function(event){
+        //  let currentnode = event.target;
+
+        // currentnode.remove();
+        // }
+
+
+        // h3.onclick=function(){
+        //     alert('heloi this is prasad;')
+        // }
+
+        // h3.onclick=function(){
+        //     alert('heloi this is run;')
+        // }
+
+
+//functin to perfom
+
+     let hadlefun = (event)=>{
+          let get =  prompt('hello this is prasad');
+            alert(`${get} welcome to you`)
+
+            // removing event
+            h4.removeEventListener("click",hadlefun)
+        }
+
+        // event listener
+        // h3.addEventListener("dblclick",hadlefun)
+
+        // h4.addEventListener("contextmenu",hadlefun)
+        
+        
+        // // console.log(h4);
+        
+        // remove envent 
+        
+        h4.addEventListener("click",hadlefun)
+    </script>
+</body>
+</html>
