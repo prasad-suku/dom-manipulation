@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prvent default</title>
+</head>
+<body>
+    
+    <form class="form-container">
+        <label for="fname">First Name</label>
+   <input type="text" placeholder="ENTER THE FIRST NAME" required>
+
+   <label for="lname">Last Name</label>
+   <input type="text" placeholder="ENTER THE Last NAME">
+
+   <button type="submit">SUMBIT</button>
+
+    </form>
+
+    <script>
+        let form_container = document.querySelector(".form-container") ;
+        // console.log(form_container);
+
+        // addeventlistener using prevent
+
+        form_container.addEventListener("submit",(event)=>{
+            event.preventDefault();
+            console.log('form submitted');
+
+            console.log("defaultprevent",event.defaultPrevented);
+        })
+    </script>
+</body>
+</html>
