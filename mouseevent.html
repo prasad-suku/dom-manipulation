@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse events</title>
+</head>
+<body>
+    
+    <h2>mouse event</h2>
+
+    
+   
+    <div style="width: 500px; height: 400pc;background: #000;color: white;">hover me</div>
+   <script>
+
+    let head = document.querySelector("h2");
+    let div = document.querySelector("div");
+    // console.log(h2,div);
+
+    // adding mouse events
+
+    // mouseover
+    div.addEventListener("mouseover",(event)=>{
+
+        console.log("mouse over",event);
+    })
+
+//     // mouseout
+
+    head.addEventListener("mouseout",(event)=>{
+
+console.log("mouse out",event);
+})
+
+// mouse move
+ 
+document.addEventListener("mousemove",event=>{
+    console.log('mouse moving');
+})
+
+
+div.addEventListener("mouseenter",(event)=>{
+    head.innerText="mouse entered";
+    head.style.color = "red"
+})
+
+div.addEventListener("mouseleave",(event)=>{
+   head.innerText="mouse leave"
+   head.style.color = "green"
+})
+
+
+div.addEventListener("mousedown",(event)=>{
+   head.innerText="mouse down"
+   head.style.color = "green"
+})
+
+div.addEventListener("mouseup",(event)=>{
+   head.innerText="mouse up"
+   head.style.color = "yellow";
+   head.setAttribute("href","www.google.com")
+   
+})
+
+
+   </script>
+
+</body>
+</html>
