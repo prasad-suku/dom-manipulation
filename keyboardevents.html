@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyboard events</title>
+</head>
+<body>
+
+    <h3>keyboard events</h3>
+
+    <script>
+
+        document.addEventListener("keyup",(event)=>{
+         let h3 =document.querySelector("h3")  
+           
+            // console.log(`keyword is :${event.key} and code is: ${event.code}`);
+        //   swith case to analyze arrows
+
+        switch (event.key) {
+            case 'ArrowUp':
+                h3.innerText= "you have clicled arrow up";
+                break;
+            case 'ArrowDown':
+            h3.innerText= "you have clicled arrow down";
+                break;
+          case 'ArrowLeft':
+          h3.innerText= "you have clicled arrow left";
+                break;
+        case 'ArrowRight':
+        h3.innerText= "you have clicled arrow right";
+                break;     
+        
+            default:
+                alert("unknown key")
+                break;
+        }
+       
+        })
+    </script>
+    
+</body>
+</html>
