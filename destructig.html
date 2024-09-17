@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            display: block;
+        }
+
+        h2{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2 class="firstclass active">hello this is h2</h2>
+    <div>
+        <p>item_1</p>
+        <p>item_2</p>
+        <p>item_3</p>
+        <p>item_4</p>
+    </div>
+
+    <button id="hidebtn">hide</button>
+    <script>
+        // let arr = [12,3243,54,3,43,34,43]
+        // const[a,,c,...e] = arr
+        // // console.log(a);
+        // // console.log(b);
+        // // // console.log(c);
+        // // console.log(d);
+        // // console.log(e);
+        // console.log(a);
+        // console.log(c);
+        // console.log(e);
+
+//         let a1,b1
+//         [a1,b2] = [12,32]
+//         console.log(a1,b2);
+// console.log("-----------");
+//         // object
+
+//         let emp = {
+//             name:{first:"arjun",last:"kumar"},
+//             age:20,
+//             language:['tamil','telugu']
+//         }
+   
+//         let{name:{first},age,language:[firslang]}=emp;
+//       let last;
+//       ({name:{last}} =emp)
+//         console.log(first);
+//         console.log(age);
+//         console.log(firslang);
+//         console.log(last);
+
+//         let a3 =10,b3=20;
+//         [b3,a3] = [a3,b3]
+
+
+//         console.log(a3);
+//         console.log(b3);
+
+// destructuring on object
+
+//  function arrithmetic(a,b){
+//      let add = a+b;
+//      let subtraction = a-b;
+//      let multiply = a*b;
+
+//      return [add,subtraction,multiply]
+//  }
+
+//  const[add,sub,mul] = arrithmetic(20,10)
+
+//  console.log(add);
+//  console.log(sub);
+//  console.log(mul);
+
+// let employes =[
+//     {name:'arun',
+//         age:20,
+//         address:{pincode:4354}
+//     },
+//     {name:'raju',
+//         age:22,
+//         address:{pincode:123}
+// //     },
+// ]
+
+// const[{name:name1,age:age1,address:address1},
+// {name:name2,age:age2,address:address2}] = employes;
+
+// console.log("fisrt emp:",name1,"age is:",age1);
+// console.log("second emp:",name2,"age is:",age2);
+
+let h2= document.querySelector("h2")
+let showbtn = document.getElementById("hidebtn")
+ 
+// showbtn.addEventListener("click",()=>{
+// if(h2.classList.contains("active")){
+//     h2.classList.toggle("active")
+//     showbtn.innerText = "show"
+// }
+// else{
+//    h2.classList.add("active")
+//    showbtn.innerText ="hide"
+// }
+//    }
+  
+// )
+
+ let getdiv = document.querySelectorAll("div p")
+//  console.log(getdiv.innerText);
+
+  getdiv.forEach(p=>{
+      p.addEventListener("mouseover",(event)=>{
+        // console.log("mouse overed");
+        p.style.color = "red"
+       
+      })
+
+      p.addEventListener("mouseleave",(event)=>{
+        console.log("mouse overed");
+        p.style.color = "black"
+      })
+
+  })
+
+  document.addEventListener("keyup",(event)=>{
+    // console.log();
+    alert(event.key)
+  })
+        </script>
+</body>
+</html>
