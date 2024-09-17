@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -116,7 +117,7 @@ li{
 
         // gettting elements
         
-        let input_contaner =  document.getElementById("input_container")
+        let input_containers =  document.getElementById("input_container")
         
         let input_form = document.getElementById('inputform')
   
@@ -181,7 +182,7 @@ alertbox.append(clrbtn)
 
 // predent the alert message to input container
 
-input_contaner.prepend(alertbox)
+input_containers.prepend(alertbox)
 
 
 // eventualy clear the form
@@ -221,4 +222,229 @@ input_form.value =""
      <!-- <script src="traversing.js"></script> -->
     <!-- <script src="./destructuring2.js"></script> -->
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo lists </title>
+<link rel="stylesheet" href="showandhide.css">
+    <style>
+        .input_container{
+            padding: 1.2rem;
+            display: flex;
+            gap: 0.4rem;
+        }
+        #resync{
+            border: none;
+            background-color: aqua;
+            padding: 4px 8px;
+            font-weight: bold;
+        }
+
+        .food_containers{
+            margin-top: 2rem;
+            background-color: rgb(240, 238, 230);
+            padding: 1.2rem;
+            border: 1px solid black;
+            width: 50%;
+        }
+         
+        
+li{
+    width: 100%;
+     background-color: rgb(123, 219, 248);
+     margin-bottom: 1rem;
+     padding: 8px;
+     font-size: larger;
+
+     transition: all 0.7s;
+ }
+
+        .item{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .item span{
+            color:black;
+            font-size:large;
+            font-size: 20px;
+            align-items: center;
+        }
+        span:hover{
+            cursor: pointer;
+        }
+
+        .alert-box{
+           display: flex;
+           gap: 0.5rem;
+           margin-bottom:1rem ;
+           padding: .5rem;
+           width:50% ;
+           background-color: rgb(43, 143, 224);
+           color: white;
+         
+        }
+
+        .alert-box button{
+            padding: 0;
+            border: none;
+            background-color: transparent;
+            font-size: 20px;
+            cursor: pointer;
+            padding-left:0.3rem ;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="input_container">
+
+   
+        <input type="text" placeholder="ENTER here" id="inputform">
+        <button id="additem">Sumbit </button>
+    </div>
+
+    <hr>
+    <ul id="food_container" class="food_containers">
+     <li class="item"><div>maggie</div><span onclick="removeitem(event)">x</span></li>
+     <li class="item"><div>noodles</div><span onclick="removeitem(event)">x</span></li>
+     <li class="item"><div>porotta</div><span onclick="removeitem(event)">x</span></li>
+     <li class="item"><div>chicken rice</div><span onclick="removeitem(event)">x</span></li>
+    </ul>
+ 
+
+
+    <!-- adding functionality hide and show input container when we click show button -->
+
+    <button id="showBtn" style="margin-bottom: 2rem;
+     padding: 9px 13px;border-radius:6px;color:white;
+    background: cornflowerblue;border:none">HIDE DIV</button>
+
+    <div class="input-section-container">
+        <input type="text" placeholder="enter the value">
+        <button>submit</button>
+    </div>
+  
+    <!-- dummy button for learing inline css in js -->
+     <!-- <button id="dommy">Practice</button>
+    resync button -->
+     <!-- <button id="resync"> Resync</button> -->
+<!-- 
+     <div id="duplicate">
+
+     </div> -->
+
+    <script>
+
+        // gettting elements
+        
+        let input_containers =  document.getElementById("input_container")
+        
+        let input_form = document.getElementById('inputform')
+  
+        let  btn_click =  document.getElementById("additem")
+        
+        let food_container = document.getElementById("food_container")
+
+        // addeventlistner
+
+     btn_click.addEventListener('click',()=>{
+
+//    <li class = "item">
+//      <div>inputitem</div>
+//      <span onclick = "removeitem(event)">x</span>
+// </li>
+
+       let el = document.createElement("li")
+
+       el.className = "item"
+      
+       let divitem = document.createElement("div")
+       divitem.textContent = input_form.value
+       let remoitemspan = document.createElement("span")
+       remoitemspan.innerText = "x"
+
+    //    adding onclick functon to span tag
+       remoitemspan.setAttribute("onclick","removeitem(event)")
+       el.append(divitem,remoitemspan)
+       
+       
+    // appending li to food container
+
+    food_container.append(el)
+   
+      
+
+     
+
+
+// syntax of xml
+//        <div div class="alert-box" >
+//                  Succesfully  added { item - anem } <button>x</button>
+// </div >
+
+
+// we have to create alert message
+
+ let alertbox = document.createElement('div')
+ let clrbtn = document.createElement("button")
+ clrbtn.textContent = "x"
+
+//  adding remove functionality to alert notification
+   alertbox.className = "alert-box"
+   clrbtn.setAttribute("onclick","removeitem(event)")
+
+let alertmes = document.createTextNode(`Succesfully! Created the ${input_form.value}-item`)
+
+alertbox.append(alertmes)
+alertbox.append(clrbtn)
+
+
+
+// predent the alert message to input container
+
+input_containers.prepend(alertbox)
+
+
+// eventualy clear the form
+input_form.value =""
+     })
+
+   
+
+    
+    
+
+
+
+//    remove items  funcition
+
+ function removeitem(event){
+ 
+    let removeitem = event.target.parentNode;
+    // console.log(removeitem);
+    removeitem.remove()  
+    // removeitem.parentNode.removeChild(removeitem)
+    
+ }
+
+   
+     
+   </script>
+
+   <!-- <script src="/basic.js"></script>
+     -->
+
+
+     <!-- <script src="looping_overlist.js"></script> -->
+     <!-- <script src="cloneparent.js"></script> -->
+     <!-- <script src="showfunctionality.js"></script> -->
+     <!-- <script src="inlinestyle.js"></script> -->
+     <!-- <script src="traversing.js"></script> -->
+    <!-- <script src="./destructuring2.js"></script> -->
+</body>
+>>>>>>> cbacdf59dce1c09f36c3e3b3599f40170f62f12e
 </html>
