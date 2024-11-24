@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>express</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <form action="/submit" method="post">
+      <input type="text" name="username" /><br />
+      <input type="text" name="age" /><br />
+      <label for="schooling">schooling</label>
+      <input type="text" name="schooling[school]" />
+      <input type="text" name="schooling[college]" />
+
+      <button type="submit">submit</button>
+    </form>
+  </body>
+</html>
