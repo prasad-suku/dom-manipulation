@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+    <style>
+
+        .container{
+            display: grid;
+            /* place-items: center; */
+            gap: 1rem;
+            margin: 10rem auto;
+            width: 70vw;
+            max-width: 390px;
+            background: #e0d7d7;
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+        .input_container{
+
+            display: grid;
+            grid-template-columns:7fr 3fr ;
+            gap: 1.4rem;
+        }
+
+        .input_container input,button{
+            margin-top: 1rem;
+            padding: 0.81rem 1rem;
+        }
+
+        button{
+            background: rgb(248, 85, 85);
+            border: none;
+            border-radius: 4px;
+            color: rgb(255, 255, 255);
+        }
+
+        .item_container{
+            /* display: block; */
+            display:flex;
+            flex-direction: column;
+            gap: 0.71rem;
+            justify-content: flex-start;
+            
+        }
+        .item{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid black;
+            margin-bottom: 0.60rem;
+        }
+        .item span{
+            color: rgb(253, 78, 78);
+            font-size: 20px;
+        }
+        span:hover{
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="input_container">
+        <input type="text" value="idly" name="inpy" id="inp" placeholder="Enter the item">
+        <button id="add_btn">Add</button>
+    </div>
+   <ul class="item_container">
+    <li class="item">sambar <span onclick="deleteitem(event)">x</span></li>
+    <li class="item">sambar <span onclick="deleteitem(event)">x</span></li>
+    <li class="item">sambar <span onclick="deleteitem(event)">x</span></li>
+    <li class="item">sambar <span onclick="deleteitem(event)">x</span></li>
+  
+   </ul>   
+</div>
+
+
+
+
+
+
+   <script>
+  let input = document.getElementById("inp");
+  
+  let btn = document.getElementById("add_btn");
+
+  let item_container = document.querySelector(".item_container");
+//   let items = item_container.querySelectorAll("li")
+ 
+  
+//   event listener to add items
+
+ btn.addEventListener("click",()=>{
+     
+   
+    //create li element
+    let li = document.createElement("li");
+     li.innerText = input.value;
+     li.className = "item";
+  
+    //  create span elemennt to delete action
+ let span = document.createElement("span");
+ span.innerText = "X";
+ 
+//  setting attribe 
+   span.setAttribute("onclick","deleteitem(event)")
+
+// appending span element to list item
+
+li.append(span)
+
+// console.log(li);
+
+
+
+
+
+
+    // append to item_container
+
+    item_container.append(li)
+
+
+    // clearing input value
+
+    input.value = ""
+ })
+
+ 
+//  delete the item functionality
+
+ function deleteitem(event){
+      const existingel = event.target.parentElement;
+       existingel.remove()
+ }
+
+
+   </script>
+</body>
+</html>
